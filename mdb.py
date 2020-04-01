@@ -1,4 +1,5 @@
 import config
+import requests
 
 from pymongo import MongoClient
 
@@ -22,6 +23,7 @@ def savedata(datahash, data):
         lastdata.insert(datadoc)
         lasthash.drop()
         lasthash.insert(hashdoc)
+        requests.get(config.API_URI)
 
         return
 
@@ -31,6 +33,7 @@ def savedata(datahash, data):
         lastdata.insert(datadoc)
         lasthash.drop()
         lasthash.insert(hashdoc)
+        requests.get(config.API_URI)
 
 def getdata():
     col = db.lastdata
