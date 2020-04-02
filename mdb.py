@@ -24,9 +24,8 @@ def savedata(datahash, data):
         lastdata.insert(datadoc)
         lasthash.drop()
         lasthash.insert(hashdoc)
-        requests.get(config.API_URI)
         time.sleep(15)
-        requests.get(config.BOT_URI)
+        requests.get(config.API_URI)
 
         return
 
@@ -36,9 +35,8 @@ def savedata(datahash, data):
         lastdata.insert(datadoc)
         lasthash.drop()
         lasthash.insert(hashdoc)
-        requests.get(config.API_URI)
         time.sleep(15)
-        requests.get(config.BOT_URI)
+        requests.get(config.API_URI)
 
 
 def getdata():
