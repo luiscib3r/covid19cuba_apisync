@@ -34,7 +34,7 @@ def sync():
 
     if data['token'] != TOKEN:
         return jsonify({
-            'code': '6b626af47bfa912a90d2e43e6a250750'
+            'code': '6b626af47bfa91e2e3e1a90d2e43e6a250750'
         })
     
     code = update()
