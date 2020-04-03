@@ -24,7 +24,7 @@ def savedata(datahash, data):
         lastdata.insert(datadoc)
         lasthash.drop()
         lasthash.insert(hashdoc)
-        time.sleep(15)
+        
         token = {'token': config.TOKEN}
         requests.post(config.API_URI, json=token)
 
@@ -36,7 +36,8 @@ def savedata(datahash, data):
         lastdata.insert(datadoc)
         lasthash.drop()
         lasthash.insert(hashdoc)
-        time.sleep(15)
+        
+        token = {'token': config.TOKEN}
         requests.post(config.API_URI, json=token)
 
 
