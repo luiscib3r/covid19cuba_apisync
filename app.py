@@ -16,7 +16,7 @@ def update():
 
     return hexcode
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -28,9 +28,13 @@ def index():
         'message': 'COVID19 Cuba Data API Sync'
     })
 
-@app.route('/sync', methods=['GET'])
+@app.route('/sync', methods=['POST'])
 def sync():
     code = update()
+
+    data = request.get_json()
+
+    print(data)
 
     return jsonify({
         'code': code
