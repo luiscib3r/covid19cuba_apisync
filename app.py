@@ -30,14 +30,17 @@ def index():
 
 @app.route('/sync', methods=['POST'])
 def sync():
+    data = request.get_json()
+
+    if data['token'] != TOKEN:
+        return jsonify({
+            'code': '6b626af47bfa912a90d2e43e6a250750'
+        })
+    
     code = update()
 
     data = request.get_json()
-
-    if data['token'] == TOKEN:
-        print(data)
-    else:
-        print('UPS')
+       
 
     return jsonify({
         'code': code
