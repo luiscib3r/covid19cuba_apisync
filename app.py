@@ -2,7 +2,7 @@ import hashlib
 import requests
 import mdb
 
-from config import DATA_URI
+from config import DATA_URI, TOKEN
 
 def update():
     try:
@@ -34,7 +34,10 @@ def sync():
 
     data = request.get_json()
 
-    print(data)
+    if data['token'] == TOKEN:
+        print(data)
+    else:
+        print('UPS')
 
     return jsonify({
         'code': code
