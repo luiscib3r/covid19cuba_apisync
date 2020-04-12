@@ -32,6 +32,8 @@ def index():
 def sync():
     data = request.get_json()
 
+    print(data)
+
     if data['token'] != TOKEN:
         return jsonify({
             'code': '6b626af47bfa91e2e3e1a90d2e43e6a250750'
